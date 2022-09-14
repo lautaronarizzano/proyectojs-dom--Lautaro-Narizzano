@@ -1,0 +1,45 @@
+.index__header{
+    background-color:   #389db5  ;
+    width: 100%;
+    border-bottom: 2px solid;
+}
+
+.nav li a{
+    background-color:  #2b7e93 ;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    font-size: 1.7em
+}
+
+.nav{
+    @include flex (row, space-around, center, nowrap);
+    min-height: 9vh;
+}
+.ul{
+    @include flex (row, center, center, nowrap);
+}
+
+.nav li a:hover{
+    background-color:  #1f5866 ;
+}
+
+.nav li ul {
+    display: none;
+    position: absolute;
+    min-width: 140px;
+}
+
+.nav li:hover > ul{
+    display: block;
+}
+img{
+    width: 60px;
+}
+.ul__li{
+    border-right: 1.5px solid white;
+}
+.li__contacto{
+    border: 0;
+}

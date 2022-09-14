@@ -1,0 +1,166 @@
+main {
+    @include flex (column, flex-start, flex-start, nowrap);
+    background-color: white;
+}
+
+section {
+    @include flex (column, center, center, nowrap);
+    border-bottom: 2px solid black;
+    width: 100%;
+}
+
+.section-intro {
+    background-image: url("https://i.pinimg.com/736x/3f/00/3c/3f003c51bb323fe38032dcf3cf587565.jpg");
+    width: 100%;
+    height: 40rem;
+}
+
+.section-1 {
+    @include flex (column, center, center, nowrap);
+    gap: 4rem;
+    height: 50rem;
+}
+
+.section-1__h1 {
+    font-size: 4em;
+    color: $primary;
+}
+
+.section-1__h2 {
+    font-size: 2.5em;
+    color: $primary
+}
+
+.section-1__div__ul {
+    @include flex (row, center, center, nowrap);
+    gap: 2rem;
+    font-size: 1.7em;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+}
+
+.section-1__div-2 {
+    font-size: 1.7em;
+    display: flex;
+    justify-content: center;
+}
+
+.p-section1 {
+    width: 50%;
+    color: $primary;
+}
+
+.link {
+    color: $primary;
+    text-decoration: underline;
+}
+
+.transferencias {
+    @include flex (column, center, center, nowrap);
+    color: $primary;
+    padding-bottom: 5rem;
+}
+
+.transferencias__h2 {
+    font-size: 4em;
+    color: $primary;
+}
+
+.transferencias__p {
+    color: $primary;
+    font-size: 2em;
+    width: 50%
+}
+
+.form__transferencias {
+    @include flex (column, center, center, nowrap);
+    gap: 1rem;
+    padding-top: 2rem;
+}
+
+.input {
+    width: 30rem;
+    height: 2.5rem;
+    margin: 1rem 0;
+}
+
+textarea {
+    resize: none;
+}
+
+.form__p {
+    font-size: 1.7em;
+    color: $primary;
+}
+
+.dolares {
+    @extend .transferencias;
+
+    &__h2 {
+        font-size: 4em;
+        color: $primary;
+    }
+}
+.dolares__form__p{
+    padding-bottom: 1rem;
+    font-size: 1.7em;
+}
+.dolares__input{
+    margin-bottom: 1rem;
+}
+.dolares__p{
+    font-size: 2em;
+    width: 50%;
+}
+.dolares__h3{
+    font-size: 2em;
+}
+.input-password{
+    margin-top: 1rem;
+    height: 2.5rem;
+}
+.p-password{
+    margin-bottom: 1rem;
+}
+.input-comprar{
+    margin-left: 2rem;
+}
+.plazofijo__h2{
+    font-size: 4em;
+    color: $primary;
+}
+.plazofijo__div{
+    @include flex (column, center, center, nowrap);
+    padding: 2rem 0;
+}
+.plazofijo__p{
+    font-size: 1.7em;
+    width: 50%;
+    color: $primary;
+}
+.plazofijo{
+    height: 55rem;
+}
+.plazofijo__form > p{
+    font-size: 1.7em;
+    color: $primary;
+}
+.prestamos{
+    height: 60rem;
+}
+.prestamos__h2{
+    font-size: 4em;
+    color: $primary;
+}
+.prestamos__p{
+    font-size: 1.7em;
+    color: $primary;
+    width: 50%;
+}
+.prestamos__div{
+    @include flex (column, center, center, nowrap);
+    gap: 2.5rem ;
+}
+.m{
+    padding-bottom: 2rem;
+}

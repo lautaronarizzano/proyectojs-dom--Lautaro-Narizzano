@@ -1,0 +1,1 @@
+Esto es un simulador de home banking, para iniciar sesion hay una comprobacion, solo puede iniiciar con los siguientes usuarios y contraseñas:("admin", "1234"),("omar", "manias"),("osvaldo", "perro123"),("agustin", "caniche"). Puede realizar varias operaciones.

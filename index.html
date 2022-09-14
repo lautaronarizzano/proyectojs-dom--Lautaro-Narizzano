@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+<body>
+    <header class="index__header">
+        <nav class="nav">
+            <img src="./assets/img/logo2-removebg-preview(2).png" alt="">
+            <ul class="ul">
+                <li class="ul__li"><a href="./index.html">Home</a>
+                    <ul>
+                        <li class="ul__ul__li"><a href="#transferencias">Transferencias</a></li>
+                        <li class="ul__ul__li"><a href="#dolares">Comprar dolares</a></li>
+                        <li class="ul__ul__li"><a href="#plazo-fijo">Plazo fijo</a></li>
+                        <li class="ul__ul__li"><a href="#prestamos">Prestamos</a></li>
+                    </ul>
+                </li>
+                <li class="ul__li"><a href="./pages/mis-tarjetas.html">Mis tarjetas / movimientos</a></li>
+                <li class="ul__li"><a href="./pages/quienes-somos.html">Quienes somos</a></li>
+                <li class="ul__li li__contacto"><a href="./pages/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="section-intro">
+        </section>
+        <section class="section-1">
+            <a href="" id="home"></a>
+                <div>
+                    <h1 class="section-1__h1">BANCO BAIRES</h1>
+                    <h2 class="section-1__h2">Bienvenido (Nombre del usuario)!!!</h2>
+                </div>
+                <div class="section-1__div">
+                    <ul class="section-1__div__ul">
+                        <li><a href="#home" class="link">Home</a></li>
+                        <li><a href="#transferencias" class="link">Transferencias</a></li>
+                        <li><a href="#dolares" class="link">Comprar dolares</a></li>
+                        <li><a href="#plazo-fijo" class="link">Plazo fijo</a></li>
+                        <li><a href="#prestamos" class="link">Prestamos</a></li>
+                    </ul>
+                </div>
+                <div class="section-1__div-2">
+                    <p class="p-section1">Este sitio ofece servicios bancarios accediendo desde internet por medio de tu computadora, tablet o
+                        telefono celular. Gracias por utilizar nuestro servicio de BANCO BAIRES. Te brindaremos el mejor
+                        servicio y apoyo!</p>
+                </div>
+            
+        </section>
+        <hr>
+        <a href="" id="transferencias"></a>
+        <section class="transferencias">
+            <h2 class="transferencias__h2">Transferencias</h2>
+            <p class="transferencias__p">Aqui dentro podras operar transferencais hacia otros usuarios que poseas una cuenta en BANCO BAIRES y
+                podras enviar dinero.</p>
+            <form action="" class="form__transferencias">
+                <p class="form__p">Nombre del destinatario</p>
+                <input type="text"  class="input" placeholder="Ingrese el ALIAS del destinatario" required>
+                <p class="form__p">Ingrese el CVU</p>
+                <input type="number"  class="input" placeholder="Ingrese el numero CVU" required>
+                <p class="form__p">Monto de dinero que desea enviar</p>
+                <input type="number"  class="input" placeholder="Ingrese el monto que desea enviar" required>
+                <p class="form__p">Mensaje</p>
+                <textarea name="" id="" cols="30" rows="10"
+                    placeholder="Ingrese el mensaje que le quiera enviar al destinatario"></textarea>
+                <input type="submit">
+                <hr>
+                <p class="form__p">Ingrese su contraseña para preservar que usted esta enviando el dinero</p>
+                <input type="password" required placeholder="Ingrese su contraseña">
+            </form>
+        </section>
+        <hr>
+        <a href="" id="dolares"></a>
+        <section class="dolares">
+            <h2 class="dolares__h2">Queres comprar dolares?</h2>
+            <p class="dolares__p">En este home banking tambien podes comprar dolares desde la comodidad de tu dispositivo!</p>
+            <h3 class="dolares__h3">Dolares</h3>
+            <form action="" class="dolares__form">
+                    <p  class="dolares__form__p">Monto en dolares</p>
+                    <input type="number" class="input dolares__input" placeholder="Monto en dolares">
+                    <p class="dolares__form__p">monto en pesos</p>
+                    <input type="number" class="input dolares__input" placeholder="Monto en pesos">
+                    <p class="dolares__form__p">Total mas impuestos</p>
+                    <input type="number" class="input dolares__input" placeholder="Monto total mas impuestos">
+                    <p class="p-password">Ingrese su contraseña para corroborar que usted este comprando los dolares</p>
+                    <input type="password" required class="input-pasword" placeholder="Ingrese su contraseña">
+                    <input type="button" value="Comprar" class="input-comprar">
+            </form>
+            <hr>
+        </section>
+        <a href="" id="plazo-fijo"></a>
+        <section class="plazofijo">
+            <h2 class="plazofijo__h2">Plazo fijo</h2>
+            <div class="plazofijo__div">
+                <p class="plazofijo__p">En esta seccion usted podra realizar plazos fijos. Que son plazos fijos? <br>
+                    Un plazo fijo, ante todo, es un instrumento de ahorro. Se trata de un depósito de dinero que podés
+                    hacer
+                    por un tiempo determinado. Concluido ese tiempo, el banco te devuelve el dinero que invertiste más
+                    los
+                    intereses generados.</p>
+                <p class="plazofijo__p">Dentro de BANCO BAIRES te brindaremos el 69.5% anual del monto que deposites. Este dinero no podra
+                    ser
+                    retirado hasta una vez terminado el plazo fijo. En este caso consta de 1 año</p>
+            </div>
+            <form action="" class="plazofijo__form">
+                <p>Dinero que desea ingresar</p>
+                <input type="number" class="input" placeholder="Dinero que deseas ingresar">
+                <p>Dinero que se le dara al finalizar 12 meses</p>
+                <input type="number" class="input" placeholder="Dinero que obtendra al finalizar 12 meses">
+                <p>Dinero que le quedara en total</p>
+                <input type="number" class="input" placeholder="Dinero total que tendra al finalizar los 12 meses">
+                <p>Ingrese su contraseña para corroborar que sea usted</p>
+                <input type="password" required class="input" placeholder="Ingrese su contraseña">
+                <input type="submit">
+            </form>
+            <hr>
+        </section>
+        <a href="" id="prestamos"></a>
+        <section class="prestamos">
+            <div class="prestamos__div">
+                <h2 class="prestamos__h2">PRESTAMOS</h2>
+                <p class="prestamos__p">Un prestamo bancario es un crédito que BANCO BAIRES otorga a personas naturales,
+                    que te permite obtener dinero en efectivo para satisfacer cualquier necesidad económica como pagar una
+                    deuda, financiar los estudios de tus hijos, realizar el pago de servicios, hacer un viaje en tus
+                    vacaciones y más.</p>
+                    <p class="prestamos__p m">Si deseas sacar un prestamo en BANCO BAIRES usted debera pagar un total de 86,6% de tasa anual mas el
+                        valor que usted pidio.</p>
+                    </div>
+            <form action="">
+                <p class="form__p">Dinero que usted desea pedir</p>
+                <input type="number" class="input">
+                <div>
+                    <p class="form__p">Meses que planea tener para devolver el dinero</p>
+                    <input type="number" class="input">
+                    <p class="form__p">Dinero que se agregaria por intereses</p>
+                    <input type="number" class="input">
+                </div>
+                <p class="form__p">Dinero que debera pagar al final del prestamo total</p>
+                <input type="number" class="input">
+                <p class="form__p">Ingrese su contraseña para corroborar que sea usted</p>
+                <input type="password" class="input">
+                <input type="submit">
+            </form>
+        </section>
+    </main>
+    <script src="./assets/js/index.js"></script>
+</body>
+
+</html>
