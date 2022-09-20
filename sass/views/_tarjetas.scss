@@ -1,0 +1,15 @@
+#movimientos {
+    display: flex;
+    flex-direction: column;
+}
+
+h3{
+    display: inline;
+}
+
+.movimientos__secciones{
+    display: flex;
+    justify-content: space-around;
+    align-items: space-evenly;
+    gap: 20rem;
+}
