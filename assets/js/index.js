@@ -23,8 +23,16 @@ let usuarios = [
     new inicioSesion("agustin", "caniche")
 ]
 
+// function registrarse() {
+//     usuarioNuevo = new inicioSesion(prompt('Ingrese su nombre de usuario:'), prompt('Ingrese su contraseña:')).push(usuarios)
+// }
+
+
+let login
 
 verificacion = 3
+
+let password
 
 function iniciarSesion() {
     while (verificacion > 0) {
@@ -34,21 +42,24 @@ function iniciarSesion() {
             verificacion -= 3
             let bienvenido = document.querySelector("#saludo")
             usuarioLogueado = JSON.parse(usuarioLogueado)
+            login = usuarioLogueado
             bienvenido.innerHTML = `Bienvenido ${usuarioLogueado.usuario} !!!`
 
         } else { 
-            const login = new inicioSesion(prompt('Ingrese su nombre de usuario:'), prompt('Ingrese su contraseña:'))
+            login = new inicioSesion(prompt('Ingrese su nombre de usuario:'), prompt('Ingrese su contraseña:'))
 
+            
             usuarios.forEach((usuario) => {
                 if (usuario.usuario === login.usuario && usuario.password === login.password) {
                     verificacion -= 3
-
+                    
                     const usuarioParseado = JSON.stringify(login)
                     localStorage.setItem('usuario', usuarioParseado)
-
+                    
+                    let {usuario} = login
                     alert(`su cuenta ha sido iniciada con exito, Bienvenido!`)
                     let bienvenido = document.querySelector("#saludo")
-                    bienvenido.innerHTML = `Bienvenido ${login.usuario} !!!`
+                    bienvenido.innerHTML = `Bienvenido ${usuario} !!!`
 
                 }
             })
@@ -63,7 +74,10 @@ iniciarSesion()
 
 
 
+
 function transferencia() {
+
+    let {password} = login
 
     let inputNombre = document.querySelector("#nombre")
 
@@ -74,6 +88,8 @@ function transferencia() {
     let inputMensaje = document.querySelector("#mensaje")
 
     let enviarTransaccion = document.querySelector("#enviarTransaccion")
+
+    let passwordTransferencia = document.querySelector("#passwordTransferencia")
 
     enviarTransaccion.addEventListener('click', () => {
 
@@ -87,7 +103,7 @@ function transferencia() {
 
             inputMensaje.value)
 
-        alert(`Gracais por confiar en nosotros! se ha realizado una transferencia a ${receptor.nombre} de un monto de $${receptor.monto}`)
+        passwordTransferencia.value == password ? alert(`Gracias por confiar en nosotros! se ha realizado una transferencia a ${receptor.nombre} de un monto de $${receptor.monto}`) : alert(`Contraseña incorrecta, vuelve a intantarlo!`)
 
     })
 
@@ -97,11 +113,11 @@ transferencia()
 
 function dolares() {
 
-    const COTIZACION_DOLAR = 240
-
     const inputDolares = document.querySelector('#dolar')
     const inputPesos = document.querySelector('#peso')
     const inputImpuesto = document.querySelector('#impuestos')
+    const passwordDolar = document.querySelector('#passwordDolar')
+    let {password} = login
 
     function convertirAPesos() {
         return parseInt(inputDolares.value) * 240
@@ -133,7 +149,7 @@ function dolares() {
     let inputComprarDolares = document.querySelector("#inputComprarDolares")
 
     inputComprarDolares.addEventListener('click', () => {
-        alert(`Gracias por hacer su compra! usted compro una cantidad de ${inputDolares.value}$USD a un costo total de $${convertirAImpuestos()}`)
+        passwordDolar.value === password ? alert(`Gracias por hacer su compra! usted compro una cantidad de ${inputDolares.value}$USD a un costo total de $${convertirAImpuestos()}`) : alert(`La contraseña no es correcta, por favor vuelve a intentarlo!`)
     })
 }
 
@@ -143,6 +159,8 @@ function plazoFijo() {
     const inputDinero = document.querySelector("#dinero")
     const inputMeses = document.querySelector("#meses")
     const inputTotal = document.querySelector("#total")
+    const passwordPlazo = document.querySelector('#passwordPlazo')
+    let {password} = login
 
     const finalizarMeses = () => {
         return parseInt(inputDinero.value * (65.9 / 100))
@@ -163,16 +181,18 @@ function plazoFijo() {
 
     const pedirPlazo = document.querySelector("#plazo")
     pedirPlazo.addEventListener('click', () => {
-        alert(`Usted ha hecho un plazo fijo con exito!! usted a depositado $${inputDinero.value} y al finalizar 12 meses usted recibira $${inputMeses.value}. En total usted podra retirar al finalizar los meses una cantidad de $${inputTotal.value}`)
+        passwordPlazo.value == password ? alert(`Usted ha hecho un plazo fijo con exito!! usted a depositado $${inputDinero.value} y al finalizar 12 meses usted recibira $${inputMeses.value}. En total usted podra retirar al finalizar los meses una cantidad de $${inputTotal.value}`) : alert(`La contraseña no es correcta, por favor vuelve a intentarlo`)
     })
 }
 
 plazoFijo()
 
 function prestamo() {
-    let inputPedir = document.querySelector("#dineroPedir")
-    let inputInteres = document.querySelector("#dineroInteres")
-    let inputDineroFinal = document.querySelector("#dineroFinal")
+    let {password} = login
+    const inputPedir = document.querySelector("#dineroPedir")
+    const inputInteres = document.querySelector("#dineroInteres")
+    const inputDineroFinal = document.querySelector("#dineroFinal")
+    const passwordPrestamo = document.querySelector("#passwordPrestamo")
     const dineroInteres = () => {
         return parseInt(inputPedir.value) * (86 / 100)
     }
@@ -190,7 +210,7 @@ function prestamo() {
 
     let btnPrestamo = document.querySelector("#btnPrestamo")
     btnPrestamo.addEventListener('click', () => {
-        alert(`Usted ha pedido un prestamo de $${inputPedir.value} con un interes de $${inputInteres.value} y un plazo final a pagar de $${inputDineroFinal.value} en 12 meses`)
+        passwordPrestamo.value == password ? alert(`Usted ha pedido un prestamo de $${inputPedir.value} con un interes de $${inputInteres.value} y un plazo final a pagar de $${inputDineroFinal.value} en 12 meses`) : alert(`La contraseña es incorrecta, por favor volver a intentarlo!!!`)
     })
 }
 

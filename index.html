@@ -70,7 +70,7 @@
                 <textarea name="" id="mensaje" cols="30" rows="10"
                     placeholder="Ingrese el mensaje que le quiera enviar al destinatario" id="mensaje"></textarea>
                     <p class="form__p">Ingrese su contraseña para preservar que usted esta enviando el dinero</p>
-                    <input type="password" required placeholder="Ingrese su contraseña">
+                    <input type="password" required placeholder="Ingrese su contraseña" id="passwordTransferencia">
                     <input type="button" value="enviar" id="enviarTransaccion">
             </form>
         </section>
@@ -86,9 +86,9 @@
                     <p class="dolares__form__p">monto en pesos</p>
                     <input type="number" class="input dolares__input" placeholder="Monto en pesos" id="peso">
                     <p class="dolares__form__p">Total mas impuestos</p>
-                    <input type="number" class="input dolares__input" placeholder="Monto total mas impuestos" id="impuestos">
+                    <input type="number" class="input dolares__input" placeholder="Monto total mas impuestos" id="impuestos" disabled>
                     <p class="p-password">Ingrese su contraseña para corroborar que usted este comprando los dolares</p>
-                    <input type="password" required class="input-pasword" placeholder="Ingrese su contraseña">
+                    <input type="password" required class="input-pasword" placeholder="Ingrese su contraseña" id="passwordDolar">
                     <input type="button" value="Comprar" class="input-comprar" id="inputComprarDolares">
             </form>
             <hr>
@@ -111,11 +111,11 @@
                 <p>Dinero que desea ingresar</p>
                 <input type="number" class="input" placeholder="Dinero que deseas ingresar" id="dinero">
                 <p>Dinero que se le dara al finalizar 12 meses</p>
-                <input type="number" class="input" placeholder="Dinero que obtendra al finalizar 12 meses" id="meses">
+                <input type="number" class="input" placeholder="Dinero que obtendra al finalizar 12 meses" id="meses" disabled>
                 <p>Dinero que le quedara en total</p>
-                <input type="number" class="input" placeholder="Dinero total que tendra al finalizar los 12 meses" id="total">
+                <input type="number" class="input" placeholder="Dinero total que tendra al finalizar los 12 meses" id="total" disabled>
                 <p>Ingrese su contraseña para corroborar que sea usted</p>
-                <input type="password" required class="input" placeholder="Ingrese su contraseña">
+                <input type="password" required class="input" placeholder="Ingrese su contraseña" id="passwordPlazo">
                 <input type="button" value="Pedir plazo fijo" id="plazo">
             </form>
             <hr>
@@ -136,16 +136,17 @@
                 <input type="number" class="input" id="dineroPedir">
                 <div>
                     <p class="form__p">Dinero que se agregaria por intereses</p>
-                    <input type="number" class="input" id="dineroInteres">
+                    <input type="number" class="input" id="dineroInteres" disabled>
                 </div>
                 <p class="form__p">Dinero que debera pagar al final del prestamo total</p>
-                <input type="number" class="input" id="dineroFinal">
+                <input type="number" class="input" id="dineroFinal" disabled>
                 <p class="form__p">Ingrese su contraseña para corroborar que sea usted</p>
-                <input type="password" class="input">
+                <input type="password" class="input" id="passwordPrestamo">
                 <input type="button" id="btnPrestamo" value="Pedir prestamo">
             </form>
         </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
     <script src="./assets/js/index.js"></script>
 </body>
 
