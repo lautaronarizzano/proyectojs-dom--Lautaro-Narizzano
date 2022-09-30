@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/lautaronarizzano/sada/issues"
   },
-  "homepage": "https://github.com/lautaronarizzano/sada#readme"
+  "homepage": "https://github.com/lautaronarizzano/sada#readme",
+  "dependencies": {
+    "sweetalert2": "^11.4.35"
+  }
 }

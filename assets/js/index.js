@@ -1,3 +1,8 @@
+// const { default: Swal } = require("sweetalert2");
+
+const { default: Swal } = require("sweetalert2");
+
+
 // clases
 class transaccion {
     constructor(nombre, cvu, monto, mensaje) {
@@ -57,14 +62,14 @@ function iniciarSesion() {
                     localStorage.setItem('usuario', usuarioParseado)
                     
                     let {usuario} = login
-                    alert(`su cuenta ha sido iniciada con exito, Bienvenido!`)
+                    Swal.fire(`su cuenta ha sido iniciada con exito, Bienvenido!`)
                     let bienvenido = document.querySelector("#saludo")
                     bienvenido.innerHTML = `Bienvenido ${usuario} !!!`
 
                 }
             })
 
-            if (verificacion > 0) alert('Lo siento, el usuario o la contraseña son incorrectas, vuelve a intentarlo')
+            if (verificacion > 0) Swal.fire('Lo siento, el usuario o la contraseña son incorrectas, vuelve a intentarlo')
         }
     }
 }
