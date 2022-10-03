@@ -1,8 +1,43 @@
-// const { default: Swal } = require("sweetalert2");
+let login
 
-const { default: Swal } = require("sweetalert2");
+//sweet alert
 
+async function pedirDatos() {
+    
+    const {
+        value: formValues
+    } = await Swal.fire({
 
+        title: 'Ingrese su usuario y contraseña',
+        
+        html:
+        
+        '<input id="swal-input1" class="swal2-input placeholder="usuario">' +
+
+            '<input id="swal-input2" class="swal2-input" placeholder="contraseña" type="password">',
+
+            preConfirm: () => {
+                
+                return [
+                    
+                    document.getElementById('swal-input1').value,
+                    
+                    document.getElementById('swal-input2').value
+                    
+                ]
+                
+            }
+            
+        })
+        
+        login = new inicioSesion(formValues[0], formValues[1])
+        
+        console.log(login)
+        
+    }
+    
+    pedirDatos()
+    
 // clases
 class transaccion {
     constructor(nombre, cvu, monto, mensaje) {
@@ -28,12 +63,8 @@ let usuarios = [
     new inicioSesion("agustin", "caniche")
 ]
 
-// function registrarse() {
-//     usuarioNuevo = new inicioSesion(prompt('Ingrese su nombre de usuario:'), prompt('Ingrese su contraseña:')).push(usuarios)
-// }
 
 
-let login
 
 verificacion = 3
 
@@ -43,24 +74,20 @@ function iniciarSesion() {
     while (verificacion > 0) {
         let usuarioLogueado = localStorage.getItem('usuario')
 
-        if (usuarioLogueado) { 
+        if (usuarioLogueado) {
             verificacion -= 3
             let bienvenido = document.querySelector("#saludo")
             usuarioLogueado = JSON.parse(usuarioLogueado)
             login = usuarioLogueado
             bienvenido.innerHTML = `Bienvenido ${usuarioLogueado.usuario} !!!`
 
-        } else { 
-            login = new inicioSesion(prompt('Ingrese su nombre de usuario:'), prompt('Ingrese su contraseña:'))
-
-            
+        } else {
             usuarios.forEach((usuario) => {
                 if (usuario.usuario === login.usuario && usuario.password === login.password) {
                     verificacion -= 3
-                    
                     const usuarioParseado = JSON.stringify(login)
                     localStorage.setItem('usuario', usuarioParseado)
-                    
+
                     let {usuario} = login
                     Swal.fire(`su cuenta ha sido iniciada con exito, Bienvenido!`)
                     let bienvenido = document.querySelector("#saludo")
@@ -77,12 +104,11 @@ function iniciarSesion() {
 iniciarSesion()
 
 
-
-
-
 function transferencia() {
 
-    let {password} = login
+    let {
+        password
+    } = login
 
     let inputNombre = document.querySelector("#nombre")
 
@@ -108,7 +134,7 @@ function transferencia() {
 
             inputMensaje.value)
 
-        passwordTransferencia.value == password ? alert(`Gracias por confiar en nosotros! se ha realizado una transferencia a ${receptor.nombre} de un monto de $${receptor.monto}`) : alert(`Contraseña incorrecta, vuelve a intantarlo!`)
+        passwordTransferencia.value == password ? Swal.fire(`Gracias por confiar en nosotros! se ha realizado una transferencia a ${receptor.nombre} de un monto de $${receptor.monto}`) : Swal.fire(`Contraseña incorrecta, vuelve a intantarlo!`)
 
     })
 
@@ -122,7 +148,9 @@ function dolares() {
     const inputPesos = document.querySelector('#peso')
     const inputImpuesto = document.querySelector('#impuestos')
     const passwordDolar = document.querySelector('#passwordDolar')
-    let {password} = login
+    let {
+        password
+    } = login
 
     function convertirAPesos() {
         return parseInt(inputDolares.value) * 240
@@ -154,7 +182,7 @@ function dolares() {
     let inputComprarDolares = document.querySelector("#inputComprarDolares")
 
     inputComprarDolares.addEventListener('click', () => {
-        passwordDolar.value === password ? alert(`Gracias por hacer su compra! usted compro una cantidad de ${inputDolares.value}$USD a un costo total de $${convertirAImpuestos()}`) : alert(`La contraseña no es correcta, por favor vuelve a intentarlo!`)
+        passwordDolar.value === password ? Swal.fire(`Gracias por hacer su compra! usted compro una cantidad de ${inputDolares.value}$USD a un costo total de $${convertirAImpuestos()}`) : Swal.fire(`La contraseña no es correcta, por favor vuelve a intentarlo!`)
     })
 }
 
@@ -165,7 +193,9 @@ function plazoFijo() {
     const inputMeses = document.querySelector("#meses")
     const inputTotal = document.querySelector("#total")
     const passwordPlazo = document.querySelector('#passwordPlazo')
-    let {password} = login
+    let {
+        password
+    } = login
 
     const finalizarMeses = () => {
         return parseInt(inputDinero.value * (65.9 / 100))
@@ -186,14 +216,16 @@ function plazoFijo() {
 
     const pedirPlazo = document.querySelector("#plazo")
     pedirPlazo.addEventListener('click', () => {
-        passwordPlazo.value == password ? alert(`Usted ha hecho un plazo fijo con exito!! usted a depositado $${inputDinero.value} y al finalizar 12 meses usted recibira $${inputMeses.value}. En total usted podra retirar al finalizar los meses una cantidad de $${inputTotal.value}`) : alert(`La contraseña no es correcta, por favor vuelve a intentarlo`)
+        passwordPlazo.value == password ? Swal.fire(`Usted ha hecho un plazo fijo con exito!! usted a depositado $${inputDinero.value} y al finalizar 12 meses usted recibira $${inputMeses.value}. En total usted podra retirar al finalizar los meses una cantidad de $${inputTotal.value}`) : Swal.fire(`La contraseña no es correcta, por favor vuelve a intentarlo`)
     })
 }
 
 plazoFijo()
 
 function prestamo() {
-    let {password} = login
+    let {
+        password
+    } = login
     const inputPedir = document.querySelector("#dineroPedir")
     const inputInteres = document.querySelector("#dineroInteres")
     const inputDineroFinal = document.querySelector("#dineroFinal")
@@ -215,7 +247,7 @@ function prestamo() {
 
     let btnPrestamo = document.querySelector("#btnPrestamo")
     btnPrestamo.addEventListener('click', () => {
-        passwordPrestamo.value == password ? alert(`Usted ha pedido un prestamo de $${inputPedir.value} con un interes de $${inputInteres.value} y un plazo final a pagar de $${inputDineroFinal.value} en 12 meses`) : alert(`La contraseña es incorrecta, por favor volver a intentarlo!!!`)
+        passwordPrestamo.value == password ? Swal.fire(`Usted ha pedido un prestamo de $${inputPedir.value} con un interes de $${inputInteres.value} y un plazo final a pagar de $${inputDineroFinal.value} en 12 meses`) : Swal.fire(`La contraseña es incorrecta, por favor volver a intentarlo!!!`)
     })
 }
 
